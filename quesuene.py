@@ -13,7 +13,6 @@ VolumeWidget {
 }
 
 QSlider::groove:horizontal {
-    border: 3px;
     background: #F1F1F5;
     height: 5px;
     border-radius: 4px;
@@ -26,15 +25,15 @@ QSlider::sub-page:horizontal {
 
 QSlider::add-page:horizontal {
     border: 2px solid #777;
-    height: 4px;
+    height: 1px;
 }
 
 QSlider::handle:horizontal {
     background: #F0F1F5;
-    border: 1px solid #777;
-    width: 10px;
-    margin-top: -3px;
-    margin-bottom: -3px;
+    border: 1px none;
+    width: 9px;
+    margin-top: -2px;
+    margin-bottom: -2px;
     border-radius: 3px;
 }
 
