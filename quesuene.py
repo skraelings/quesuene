@@ -47,7 +47,7 @@ def list_sink_inputs():
     sink-input. More recently created sink-inputs come first."""
 
     def _parse(data):
-        index = re.findall("Sink Input #([0-9]*)", data)[0]
+        index = int(re.findall("Sink Input #([0-9]*)", data)[0])
         app_name = re.findall("application.name = \"(.*)\"", data)[0]
         volume_l, volume_r = re.findall("([0-9]*%)", data)
         assert volume_r == volume_l, "Volume level on left and right are not the same"
@@ -64,7 +64,7 @@ def list_sink_inputs():
 
 
 def set_sink_input_volume(sink_id, volume):
-    subprocess.check_output(["pactl", "set-sink-input-volume", sink_id,
+    subprocess.check_output(["pactl", "set-sink-input-volume", str(sink_id),
                              str(volume) + '%'])
 
 
