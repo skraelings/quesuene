@@ -49,8 +49,8 @@ def list_sink_inputs():
     def _parse(data):
         index = int(re.findall("Sink Input #([0-9]*)", data)[0])
         app_name = re.findall("application.name = \"(.*)\"", data)[0]
-        volume_l, volume_r = re.findall("([0-9]*%)", data)
-        assert volume_r == volume_l, "Volume level on left and right are not the same"
+        volume_l = re.findall("([0-9]*%)", data)[0]
+        #assert volume_r == volume_l, "Volume level on left and right are not the same"
         return {"index":index, "app_name":app_name, "volume":volume_l}
 
     def parse_command_output(command_output):
