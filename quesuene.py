@@ -131,7 +131,6 @@ class VolumeWidget(Qt.QWidget):
 
 
 if __name__ == "__main__":
-    import os
     import sys
     # style sheet for whole app
     app = Qt.QApplication(sys.argv)
